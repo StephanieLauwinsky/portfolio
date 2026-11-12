@@ -53,23 +53,24 @@ export function StickyNote({ children, className = "" }: { children: React.React
   );
 }
 
-/** Hand-drawn portrait (drawn from Stephanie's photo). Used in the nav badge and the contact notebook. */
+/**
+ * Hand-drawn head doodle of Stephanie (from her photo). Used in the nav badge and the contact notebook.
+ * Raw exports live in /public/doodle (SVG + PNG).
+ */
 export function AvatarDoodle({ className = "", face = "#ffe500" }: { className?: string; face?: string }) {
   return (
-    <svg viewBox="0 0 240 260" className={className} fill="none" stroke="#111" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {/* long hair, back layer (falls past the shoulders) */}
-      <path d="M120 24 C 66 24, 40 64, 42 114 C 44 162, 32 202, 24 240 C 48 250, 72 244, 86 230 L 154 230 C 168 244, 192 250, 216 240 C 208 202, 196 162, 198 114 C 200 64, 174 24, 120 24 Z" fill="#111"/>
-      {/* sweater shoulders */}
-      <path d="M30 262 C 34 240, 60 226, 94 220 L 146 220 C 180 226, 206 240, 210 262" fill="#fff"/>
-      {/* neck */}
-      <path d="M106 180 L 106 208 L 134 208 L 134 180" fill={face}/>
-      {/* turtleneck collar */}
-      <path d="M100 204 C 100 212, 100 220, 102 226 C 114 232, 126 232, 138 226 C 140 220, 140 212, 140 204 C 128 210, 112 210, 100 204 Z" fill="#fff"/>
-      <path d="M106 216 L 106 226 M114 218 L 114 229 M126 218 L 126 229 M134 216 L 134 226" strokeWidth="1.6"/>
+    <svg viewBox="18 16 204 220" className={className} fill="none" stroke="#111" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      {/* hair, back layer: wavy, ends just below the chin */}
+      <path d="M120 24 C 66 24, 40 64, 44 110 C 46 138, 32 154, 38 176 C 44 196, 28 208, 36 224 C 50 230, 62 222, 68 212 C 78 222, 94 218, 98 204 C 104 192, 136 192, 142 204 C 146 218, 162 222, 172 212 C 178 222, 190 230, 204 224 C 212 208, 196 196, 202 176 C 208 154, 194 138, 196 110 C 200 64, 174 24, 120 24 Z" fill="#111"/>
       {/* face */}
       <path d="M68 108 C 64 152, 84 194, 120 196 C 156 194, 176 152, 172 108 C 168 76, 146 58, 120 58 C 94 58, 72 76, 68 108 Z" fill={face}/>
-      {/* hair front: centre part, curtains framing the face */}
-      <path d="M58 204 C 48 170, 46 140, 48 112 C 52 66, 82 34, 120 32 C 158 34, 188 66, 192 112 C 194 140, 192 170, 182 204 C 176 176, 178 140, 170 110 C 164 86, 142 72, 121 62 C 98 72, 76 86, 70 110 C 62 140, 64 176, 58 204 Z" fill="#111"/>
+      {/* hair front: centre part, wavy curtains framing the face */}
+      <path d="M120 32 C 82 34, 52 66, 48 110 C 48 128, 40 142, 46 162 C 52 182, 40 196, 50 214 C 58 206, 64 196, 64 182 C 64 166, 72 152, 70 132 C 68 106, 92 76, 121 62 C 148 76, 172 106, 170 132 C 168 152, 176 166, 176 182 C 176 196, 182 206, 190 214 C 200 196, 188 182, 194 162 C 200 142, 192 128, 192 110 C 188 66, 158 34, 120 32 Z" fill="#111"/>
+      {/* wave strands */}
+      <path d="M58 92 C 52 112, 60 128, 54 146 C 48 164, 58 180, 52 198" stroke={face} strokeWidth="2"/>
+      <path d="M182 92 C 188 112, 180 128, 186 146 C 192 164, 182 180, 188 198" stroke={face} strokeWidth="2"/>
+      <path d="M42 186 C 46 200, 40 210, 44 220" stroke={face} strokeWidth="2"/>
+      <path d="M198 186 C 194 200, 200 210, 196 220" stroke={face} strokeWidth="2"/>
       {/* the part */}
       <path d="M121 36 C 120 46, 120 54, 121 62" stroke={face} strokeWidth="2.5"/>
       {/* brows */}
