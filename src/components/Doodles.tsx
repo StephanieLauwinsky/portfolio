@@ -53,25 +53,41 @@ export function StickyNote({ children, className = "" }: { children: React.React
   );
 }
 
-/** Hand-drawn face used inside the contact notebook. Replace via `site.avatar`. */
+/** Hand-drawn portrait (drawn from Stephanie's photo). Used in the nav badge and the contact notebook. */
 export function AvatarDoodle({ className = "", face = "#ffe500" }: { className?: string; face?: string }) {
   return (
-    <svg viewBox="0 0 220 240" className={className} fill="none" stroke="#111" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {/* hair back */}
-      <path d="M38 120 C 20 60, 60 18, 112 18 C 170 18, 205 62, 190 128 C 186 150, 196 175, 205 190 C 180 196, 168 180, 165 165" fill="#111" />
-      <path d="M38 120 C 30 150, 20 172, 14 190 C 40 196, 54 180, 58 165" fill="#111" />
+    <svg viewBox="0 0 240 260" className={className} fill="none" stroke="#111" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      {/* long hair, back layer (falls past the shoulders) */}
+      <path d="M120 24 C 66 24, 40 64, 42 114 C 44 162, 32 202, 24 240 C 48 250, 72 244, 86 230 L 154 230 C 168 244, 192 250, 216 240 C 208 202, 196 162, 198 114 C 200 64, 174 24, 120 24 Z" fill="#111"/>
+      {/* sweater shoulders */}
+      <path d="M30 262 C 34 240, 60 226, 94 220 L 146 220 C 180 226, 206 240, 210 262" fill="#fff"/>
+      {/* neck */}
+      <path d="M106 180 L 106 208 L 134 208 L 134 180" fill={face}/>
+      {/* turtleneck collar */}
+      <path d="M100 204 C 100 212, 100 220, 102 226 C 114 232, 126 232, 138 226 C 140 220, 140 212, 140 204 C 128 210, 112 210, 100 204 Z" fill="#fff"/>
+      <path d="M106 216 L 106 226 M114 218 L 114 229 M126 218 L 126 229 M134 216 L 134 226" strokeWidth="1.6"/>
       {/* face */}
-      <path d="M52 112 C 50 170, 80 210, 112 210 C 146 210, 172 172, 170 112 C 150 98, 120 90, 100 70 C 92 92, 70 106, 52 112 Z" fill={face} />
-      {/* bangs */}
-      <path d="M52 112 C 70 106, 92 92, 100 70 C 120 90, 150 98, 170 112" />
+      <path d="M68 108 C 64 152, 84 194, 120 196 C 156 194, 176 152, 172 108 C 168 76, 146 58, 120 58 C 94 58, 72 76, 68 108 Z" fill={face}/>
+      {/* hair front: centre part, curtains framing the face */}
+      <path d="M58 204 C 48 170, 46 140, 48 112 C 52 66, 82 34, 120 32 C 158 34, 188 66, 192 112 C 194 140, 192 170, 182 204 C 176 176, 178 140, 170 110 C 164 86, 142 72, 121 62 C 98 72, 76 86, 70 110 C 62 140, 64 176, 58 204 Z" fill="#111"/>
+      {/* the part */}
+      <path d="M121 36 C 120 46, 120 54, 121 62" stroke={face} strokeWidth="2.5"/>
+      {/* brows */}
+      <path d="M84 108 C 92 103, 102 103, 108 106" strokeWidth="3.5"/>
+      <path d="M132 106 C 138 103, 148 103, 156 108" strokeWidth="3.5"/>
+      {/* round glasses */}
+      <circle cx="96" cy="128" r="20" strokeWidth="4"/>
+      <circle cx="144" cy="128" r="20" strokeWidth="4"/>
+      <path d="M116 126 C 118 122, 122 122, 124 126" strokeWidth="3.5"/>
+      <path d="M76 124 L 70 121 M164 124 L 170 121" strokeWidth="3.5"/>
       {/* eyes */}
-      <path d="M86 138 C 90 132, 98 132, 102 138" />
-      <path d="M124 138 C 128 132, 136 132, 140 138" />
-      {/* cheeks */}
-      <path d="M74 160 l8 -2 M140 158 l8 2" strokeWidth="3.5" />
-      {/* nose + smile */}
-      <path d="M113 146 C 110 156, 108 162, 116 163" strokeWidth="4" />
-      <path d="M94 178 C 104 192, 124 192, 134 178" />
+      <circle cx="98" cy="130" r="5" fill="#111" stroke="none"/>
+      <circle cx="146" cy="130" r="5" fill="#111" stroke="none"/>
+      {/* nose */}
+      <path d="M120 142 C 118 151, 116 156, 122 158" strokeWidth="3.5"/>
+      {/* lips: calm, slightly full */}
+      <path d="M108 172 C 114 169, 126 169, 132 172" strokeWidth="3.5"/>
+      <path d="M111 173 C 116 179, 124 179, 129 173" strokeWidth="3"/>
     </svg>
   );
 }
