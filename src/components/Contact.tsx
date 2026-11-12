@@ -136,7 +136,7 @@ export function Contact() {
   }, []);
 
   return (
-    <section id="contact" className="scroll-mt-8 overflow-hidden px-4 pb-40 pt-16">
+    <section id="contact" className="scroll-mt-8 overflow-hidden px-4 pb-24 pt-16">
       {/* Mobile: pages stacked */}
       <div className="mx-auto max-w-md shadow-[0_25px_50px_-20px_rgb(0_0_0/0.35)] md:hidden">
         <AvatarPage />

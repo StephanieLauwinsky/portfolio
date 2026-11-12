@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "About", description: site.bio[0] };
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto grid max-w-5xl gap-12 px-4 pb-40 pt-16 sm:px-6 md:grid-cols-[1fr_1.4fr] md:items-start">
+    <main className="mx-auto grid max-w-5xl gap-12 px-4 pb-24 pt-40 sm:px-6 md:pt-32 md:grid-cols-[1fr_1.4fr] md:items-start">
       <div className="relative mx-auto w-64 rotate-[-2deg] bg-white p-3 pb-10 shadow-[0_20px_40px_-15px_rgb(0_0_0/0.35)] md:sticky md:top-16">
         <div className="relative aspect-[4/5]">
           <MediaOrPlaceholder src={site.portrait} alt={`Portrait of ${site.name}`} label="your photo" sizes="256px" />

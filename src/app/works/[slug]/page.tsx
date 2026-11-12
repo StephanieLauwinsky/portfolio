@@ -30,7 +30,7 @@ export default async function WorkPage({ params }: PageProps<"/works/[slug]">) {
   ];
 
   return (
-    <main className="mx-auto max-w-4xl px-4 pb-40 pt-16 sm:px-6">
+    <main className="mx-auto max-w-4xl px-4 pb-24 pt-40 sm:px-6 md:pt-32">
       <Link href="/#works" className="inline-flex items-center gap-2 font-script text-xl text-ink-soft hover:text-ink">
         <Arrow className="h-5 w-10" /> back to works
       </Link>
