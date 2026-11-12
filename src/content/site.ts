@@ -49,6 +49,10 @@ export const site = {
   cameraNote: "I really love taking pictures",
   cameraAside: "shot on my phone",
   contactHeading: ["Let's", "make", "something"],
+  contactLabel: "Contact with me!",
+  contactSend: "Send it",
+  /** Drawing shown inside the notebook. Leave undefined to use the built-in doodle. */
+  avatar: undefined as string | undefined,
 };
 
 // PLACEHOLDER projects: replace with real case studies.

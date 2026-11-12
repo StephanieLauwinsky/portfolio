@@ -52,3 +52,26 @@ export function StickyNote({ children, className = "" }: { children: React.React
     </div>
   );
 }
+
+/** Hand-drawn face used inside the contact notebook. Replace via `site.avatar`. */
+export function AvatarDoodle({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 220 240" className={className} fill="none" stroke="#111" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      {/* hair back */}
+      <path d="M38 120 C 20 60, 60 18, 112 18 C 170 18, 205 62, 190 128 C 186 150, 196 175, 205 190 C 180 196, 168 180, 165 165" fill="#111" />
+      <path d="M38 120 C 30 150, 20 172, 14 190 C 40 196, 54 180, 58 165" fill="#111" />
+      {/* face */}
+      <path d="M52 112 C 50 170, 80 210, 112 210 C 146 210, 172 172, 170 112 C 150 98, 120 90, 100 70 C 92 92, 70 106, 52 112 Z" fill="#ffe500" />
+      {/* bangs */}
+      <path d="M52 112 C 70 106, 92 92, 100 70 C 120 90, 150 98, 170 112" />
+      {/* eyes */}
+      <path d="M86 138 C 90 132, 98 132, 102 138" />
+      <path d="M124 138 C 128 132, 136 132, 140 138" />
+      {/* cheeks */}
+      <path d="M74 160 l8 -2 M140 158 l8 2" strokeWidth="3.5" />
+      {/* nose + smile */}
+      <path d="M113 146 C 110 156, 108 162, 116 163" strokeWidth="4" />
+      <path d="M94 178 C 104 192, 124 192, 134 178" />
+    </svg>
+  );
+}
