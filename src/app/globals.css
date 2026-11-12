@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #f7f7f7;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #474747;
+  --color-highlight: #ffe500;
+  --color-strap: #e10600;
+  --font-marker: var(--font-permanent-marker), "Comic Sans MS", cursive;
+  --font-script: var(--font-caveat), cursive;
+  --font-hand: var(--font-patrick-hand), cursive;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-hand);
+}
+
+/* Hand-drawn hatched frame around images */
+.sketch-frame {
+  position: relative;
+  padding: clamp(14px, 3vw, 36px);
+  border: 1.5px solid var(--color-ink);
+  background: repeating-linear-gradient(135deg, #d6d6d6 0 1px, transparent 1px 9px), #fbfbfb;
+  box-shadow: 1px 2px 0 rgb(0 0 0 / 0.08);
+}
+
+.sketch-frame > .frame-inner {
+  position: relative;
+  z-index: 1;
+  border: 1.5px solid var(--color-ink);
+  overflow: hidden;
+}
+
+.sticky-note {
+  background: var(--color-highlight);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.12);
+}
+
+.tag-pill {
+  border: 1.5px solid var(--color-ink);
+  border-radius: 999px 900px 999px 950px / 60px 70px 55px 65px;
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+
+.swing {
+  transform-origin: top center;
+  animation: swing 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .swing { animation: none; }
 }
